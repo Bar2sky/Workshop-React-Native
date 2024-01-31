@@ -1,19 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, TouchableOpacity, TextInput, StyleSheet, Text, View, Button } from 'react-native';
 import React, { UseState } from 'react';
+import MyComponent from './composant'
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.title}>
-      <Text>Titre</Text>
+        <Text>Titre</Text>
+        <MyComponent />
       </View>
       <Button title="Bouton" onPress={() => console.log('Bonjour.')} />
       <StatusBar style="auto" />
-      {/* <View style={styles.edit_zone}> */}
-        {/* <TextInput style={styles.input} onChangeText={onChangeText} value={text} placeholder="Type here..."/> */}
-        <TextInput style={styles.edit_zone} placeholder="Type here..."/>
-      {/* </View> */}
+      <TextInput style={styles.edit_zone} placeholder="Type here..."/>
     </View>
   );
 }
@@ -26,11 +27,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    backgroundColor: 'white',
-    alignItems: 'center',
+    marginBottom: 70,
+    paddingVertical: 16,
+    borderWidth: 4,
+    borderColor: '#20232a',
+    borderRadius: 6,
+    backgroundColor: '#61dafb',
+    color: '#20232a',
+    textAlign: 'center',
     justifyContent: 'center',
-    padding: 20,
-    marginBottom: 20,
+    textAlign: 'center',
+    fontSize: 30,
+    width: '40%',
+    fontWeight: 'bold',
   },
   edit_zone: {
     borderColor: 'black',
